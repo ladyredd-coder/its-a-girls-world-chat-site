@@ -1,0 +1,11 @@
+{
+  "title": "It's A Girl's World Chat SIte",
+  "description": "A streamlined signup experience for new users, with a visual carousel, social sign-in options, and guided steps that make onboarding effortless.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fredoka:wght@600;700&display=swap');
+@import 'tailwindcss';
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: #fff8ff; }
+  button, a { cursor: pointer; }
+}
+
+@layer components {
+  .dashboard-gradient { background: radial-gradient(circle at 15% 12%,#f9c6ff 0,transparent 30%),radial-gradient(circle at 88% 18%,#bfeaff 0,transparent 31%),linear-gradient(150deg,#fff9fd,#eee5ff 55%,#e2f5ff); }
+  .flow-gradient { background: linear-gradient(180deg,#f1eaff 0,#fff9ff 13%,#fbf6ff 65%,#edf6ff 100%); }
+  .logo { font-family:'Fredoka',sans-serif; font-weight:700; letter-spacing:-.04em; background:linear-gradient(90deg,#ff2ca3,#8a45e8,#308dff); -webkit-background-clip:text; color:transparent; filter:drop-shadow(0 2px 0 white); }
+  .nav-link { @apply relative whitespace-nowrap transition hover:text-[#d72791]; }
+  .nav-link::after { content:''; @apply absolute -bottom-2 left-0 h-0.5 w-0 bg-[#ff43ab] transition-all; }
+  .nav-link:hover::after { @apply w-full; }
+  .soft-button { @apply rounded-xl px-4 py-2.5 text-sm font-black text-[#7d2fb8] transition hover:bg-[#f5e7fb]; }
+  .bubble-button { @apply rounded-xl bg-gradient-to-r from-[#ff43ad] to-[#8e48e8] px-5 py-2.5 text-sm font-black text-white shadow-[0_6px_20px_rgba(211,52,160,.3)] transition hover:-translate-y-0.5; }
+  .hero-button { @apply inline-flex h-13 items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#ff369f] via-[#d838c9] to-[#7657ef] px-6 font-black text-white shadow-[0_10px_30px_rgba(202,44,160,.3)] transition hover:-translate-y-1; }
+  .outline-button { @apply h-13 rounded-xl border-2 border-[#8f3abb] bg-white/40 px-6 font-black text-[#79289e] backdrop-blur transition hover:bg-white; }
+  .gradient-word { font-family:'Fredoka',sans-serif; color:transparent; -webkit-text-stroke:2px #6f1b8d; background:linear-gradient(90deg,#ff2b9c,#a53be0 55%,#2f8eff); -webkit-background-clip:text; filter:drop-shadow(3px 4px 0 #ffd4f0); }
+  .live-card { @apply relative min-w-[190px] rounded-xl border border-white/80 bg-white/65 p-4 shadow-[0_8px_24px_rgba(90,30,120,.08)] backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white; }
+  .kicker { @apply text-[11px] font-black uppercase tracking-[.2em] text-[#d12a91]; }
+  .section-title { @apply mt-2 text-3xl font-black leading-tight tracking-[-.04em] sm:text-4xl; font-family:'Fredoka',sans-serif; }
+  .quick-card { @apply flex min-h-32 flex-col items-center justify-center gap-4 rounded-2xl border border-white/80 bg-white/60 p-4 text-center shadow-[0_10px_35px_rgba(97,35,119,.08)] backdrop-blur-lg transition hover:-translate-y-1 hover:bg-white; }
+  .room-gradient { @apply rounded-[22px] p-[2px] shadow-[0_14px_40px_rgba(90,33,111,.1)] transition duration-300 hover:-translate-y-1; }
+  .room-inner { @apply h-full rounded-[20px] bg-white/95 p-6 backdrop-blur-xl; }
+  .online-pill { @apply flex items-center gap-1.5 rounded-lg bg-[#edf9f2] px-2.5 py-1.5 text-[10px] font-black text-[#2e9a5f]; }
+  .online-pill i { @apply size-1.5 rounded-full bg-[#37cf76]; }
+  .glass-panel { @apply rounded-2xl border border-white/80 bg-white/65 p-6 shadow-[0_14px_45px_rgba(83,30,105,.1)] backdrop-blur-xl; }
+  .filter-active { @apply rounded-lg bg-[#922fa3] px-4 py-2 text-xs font-black text-white; }
+  .filter-button { @apply rounded-lg border border-[#e4d1eb] bg-white/60 px-4 py-2 text-xs font-black text-[#72517d] transition hover:bg-white; }
+  .masonry-card { @apply mb-5 break-inside-avoid overflow-hidden rounded-2xl border border-white/80 bg-white shadow-[0_12px_38px_rgba(86,31,105,.11)] transition hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(86,31,105,.16)]; }
+  .quote-card { @apply bg-gradient-to-br from-[#ff56ad] via-[#e84bc9] to-[#8c59e9] p-8 text-white; }
+}
+
+.masonry { columns:1; column-gap:1.25rem; }
+@media (min-width:640px) { .masonry { columns:2; } }
+@media (min-width:1024px) { .masonry { columns:3; } }
+.no-scrollbar::-webkit-scrollbar { display:none; }
+.no-scrollbar { scrollbar-width:none; }
+.marquee div { width:max-content; animation:marquee 23s linear infinite; }
+@keyframes marquee { to { transform:translateX(-50%); } }
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; transition-duration:.01ms!important; } }
